@@ -1,4 +1,4 @@
-# doctors4skin
+# doctor4skin
 
 ## Project setup
 ```

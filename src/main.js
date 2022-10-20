@@ -1,26 +1,25 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router/router'
+import PrimeVue from 'primevue/config';
 
-import PrimeVue from 'primevue/config'
-import Button from 'primevue/button'
-import Toolbar from 'primevue/toolbar'
-import InputText from 'primevue/inputtext'
+import 'primevue/resources/themes/saga-blue/theme.css'
+import 'primevue/resources/primevue.min.css'
+import 'primeicons/primeicons.css'
+
+import Button from 'primevue/button';
+import InputText from 'primevue/inputtext';
 import Password from 'primevue/password';
 
-import 'primevue/resources/themes/saga-blue/theme.css'       //theme
-import 'primevue/resources/primevue.min.css'                 //core css
-import 'primeicons/primeicons.css'            
+//createApp(App).mount('#app')
 
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(router)
 app.use(PrimeVue)
 
-app.component('Toolbar', Toolbar)
 app.component('Button', Button)
 app.component('InputText', InputText)
 app.component('Password', Password)
 
-
-app.mount('#app')
-
-//createApp(App).use(PrimeVue).mount('#app')
+app.mount('#app');
