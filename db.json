@@ -1,0 +1,25 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Nombre1",
+      "lastName": "Apellido1",
+      "email": "email1@gmail.com",
+      "password": "contra1"
+    },
+    {
+      "name": "Nombre2",
+      "lastName": "Apellido2",
+      "email": "correo2@gmail.com",
+      "password": "contra2",
+      "id": 2
+    },
+    {
+      "name": "Nombre3",
+      "lastName": "Apellido3",
+      "email": "correo3@gmail.com",
+      "password": "contra3",
+      "id": 3
+    }
+  ]
+}
