@@ -24,6 +24,7 @@ import Loggin from '@/pages/loggin/Loggin.vue';
 <script>
 import router from '@/router/router';
 import { DoctorServices } from '@/services/DoctorServices'
+import { PatientServices } from '@/services/PatientService';
 import { useRoute, useRouter } from "vue-router";
 import { Home } from '@/pages/Doctor/Home.vue'
 export default {
