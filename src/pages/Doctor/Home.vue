@@ -13,8 +13,8 @@
  
                      
  
-                     
-                     <button type="button"   class="btn text-danger mt-10 pt-10">Cerrar Sesion</button>
+                     <router-link tag="button" class="btn text-danger mt-10 pt-10" :to="{name: 'loggin'}"> Cerrar Sesion</router-link>
+                     <!-- <button type="button"   class="btn text-danger mt-10 pt-10">Cerrar Sesion</button> -->
                      
  
                  </div>
