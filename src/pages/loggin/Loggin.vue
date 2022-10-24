@@ -22,8 +22,10 @@ import Loggin from '@/pages/loggin/Loggin.vue';
 </template>
 
 <script>
+import router from '@/router/router';
 import { DoctorServices } from '@/services/DoctorServices'
-
+import { useRoute, useRouter } from "vue-router";
+import { Home } from '@/pages/Doctor/Home.vue'
 export default {
     data() {
         return {
@@ -37,11 +39,12 @@ export default {
     },
     methods: {
         async loggin() {
-            this.doctorid = await this.doctorServices.validateDoctor(this.username, this.password)
+            this.doctorid = await this.doctorServateDoctor(this.username, this.password)
             if(this.doctorid) {
                 console.log(this.doctorid)
                 this.username = ''
                 this.password = ''
+                router.push(`/doctors/:${this.doctorid.id}`)
                 //return true
             }
             console.log('No')
