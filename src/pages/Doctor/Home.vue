@@ -75,8 +75,8 @@
                          <li class="list-group-item">Dr. Ricardo Huaman</li>
                          <li class="list-group-item">Dr. Ricardo Huamanm</li>
                          <li class="list-group-item" >Dr. Ricardo Huaman</li>
-                         <li class="list-group-item">Dr. Ricardo Huaman</li>
-                         <li class="list-group-item">Dr. Ricardo Huamanm</li>
+                         <li class="list-group-item">Dr. Rojas Poma</li>
+                         <li class="list-group-item">Dr. Ricardo Hornaldo</li>
  
                      </ul>
                  </div>
