@@ -13,7 +13,6 @@ import Loggin from '@/pages/loggin/Loggin.vue';
                 Iniciar Sesion
             </Button>
             <router-link :to="{name: 'Doctor', params: { id: doctorid }}" id="rl"></router-link>
-            
             <span style="margin-bottom: 40px">Eres nuevo en Doctors4skin?&nbsp;<router-link :to=" {name: 'register' }"><a>Create una cuenta</a></router-link></span>
     </form>
 
@@ -27,12 +26,14 @@ import { DoctorServices } from '@/services/DoctorServices'
 import { PatientServices } from '@/services/PatientService';
 import { useRoute, useRouter } from "vue-router";
 import { Home } from '@/pages/Doctor/Home.vue'
+import { isObject } from '@vue/shared';
 export default {
     data() {
         return {
             username: '',
             password: '',
-            doctorid: 1
+            doctorid: 1,
+            patientid: 1
         }
     },
     watch: {
@@ -40,21 +41,32 @@ export default {
     },
     methods: {
         async loggin() {
-            this.doctorid = await this.doctorServateDoctor(this.username, this.password)
-            if(this.doctorid) {
-                console.log(this.doctorid)
-                this.username = ''
-                this.password = ''
-                router.push(`/doctors/:${this.doctorid.id}`)
-                //return true
+            
+            const recibo =  await this.doctorServices.validateDoctor(this.username, this.password)
+            if(recibo[1] == 1)
+            {
+                this.doctorid = recibo[1]
+                router.push(`/doctors/${this.doctorid.id}`)
             }
-            console.log('No')
-        
-            //return false
+            else
+            {
+                router.push(`/doctors/${this.doctorid.id}`)
+            }
+            //this.doctorid
+             // if(this.doctorid != null) {
+            //     console.log('pasa igual >v')
+            //     // router.push(`/doctors/${this.doctorid.id}`)
+            //     //return true
+            // }
+            console.log(recibo[0],recibo[1])
+
+            this.username = ''
+            this.password = ''
         }
     },
     created() {
         this.doctorServices = new DoctorServices
+        this.patientServices = new PatientServices()
     }
 }
 </script>

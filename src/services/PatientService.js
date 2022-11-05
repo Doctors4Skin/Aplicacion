@@ -2,10 +2,14 @@ import axios from "axios";
 
 const service = axios.create({
     baseURL: 'http://localhost:3000'
+
 })
 
 export class PatientServices {
 
+    constructor() {
+
+    }
     async getAll() {
         const { data } = await service.get('/patients')
         console.log('data services', data)
