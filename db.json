@@ -5,14 +5,49 @@
       "name": "Nombre1",
       "lastName": "Apellido1",
       "email": "email1@gmail.com",
-      "password": "contra1"
+      "password": "contra1",
+      "datos":{
+        "remainingBalance" : 554.5,
+        "queriesMade": 300,
+        "pendingQueries": 200
+      },
+      "queries":[
+         "Dr. Maximo Rojas",
+         "Dr. Roberto Sarmiento",
+         "Dr. william Saavedra",
+         "Dr. Maximo Rojas",
+         "Dr. Roberto Sarmiento",
+         "Dr. william Saavedra",
+         "Dr. Maximo Rojas",
+         "Dr. Roberto Sarmiento",
+         "Dr. william Saavedra"
+
+      ]
+      
     },
     {
       "name": "Nombre2",
       "lastName": "Apellido2",
       "email": "correo2@gmail.com",
       "password": "contra2",
-      "id": 2
+      "id": 2,
+      "datos":{
+        "remainingBalance" : 458,
+        "queriesMade": 426,
+        "pendingQueries": 420
+      },
+      "queries":[
+         "Dr. Fulanito Rojas",
+         "Dr. humala Sarmiento",
+         "Dr. ricardo Saavedra",
+         "Dr. andres Rojas",
+         "Dr. mac Sarmiento",
+         "Dr. ximena Saavedra",
+         "Dr. daniela Rojas",
+         "Dr. Roberto Sarmiento",
+         "Dr. william Saavedra"
+
+      ]
     },
     {
       "name": "Nombre3",
@@ -20,6 +55,29 @@
       "email": "correo3@gmail.com",
       "password": "contra3",
       "id": 3
+    },
+    {
+      "name": "1321321",
+      "lastName": "213213",
+      "email": "1231",
+      "password": "123213",
+      "id": 4
+    }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "name": "Willy",
+      "lastName": "Valentin",
+      "email": "patient1@gmail.com",
+      "password": "patient1"
+    },
+    {
+      "name": "Angie",
+      "lastName": "Valverde",
+      "email": "angie@gmail.com",
+      "password": "12356",
+      "id": 2
     }
   ]
 }

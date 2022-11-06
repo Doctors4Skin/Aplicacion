@@ -1,5 +1,8 @@
 <template>
+    
+
     <router-view />
+
     <!-- <Home :id=2 /> -->
 </template>
 

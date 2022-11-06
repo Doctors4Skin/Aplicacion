@@ -12,7 +12,10 @@
             <InputText v-model="email" class="input"/>
             <h5>Contrasena</h5>
             <InputText v-model="password" class="input"/>
+            <h5>¿Eres un Paciente?</h5>
+            <input class="checkbox_input" type="checkbox" id="checkbox" v-model="checked" />
             <Button label="Registrarse" class="button" v-on:click="register"/>
+            
         </form>
     </div>
     <router-link :to=" {name: 'loggin' }"><Button label="Regresar" class="button" style="width: 20%"/></router-link>
@@ -20,6 +23,7 @@
 
 <script>
 import { DoctorServices } from '@/services/DoctorServices'
+import { PatientServices } from '@/services/PatientService';
 
 export default {
     data() {
@@ -27,11 +31,16 @@ export default {
             name: "",
             lastName: "",
             password: "",
-            email: ""
+            email: "",
+            checked: false
         }
     },
     methods: {
         async register() {
+        
+            
+      
+
             let message = "" 
             console.log(this.name.length)
             if(this.name.length == 0)
@@ -46,13 +55,32 @@ export default {
                 console.log(message)
                 return
             }
-            const doctor = {
+
+            const checkbox = document.getElementById('checkbox')
+            console.log('checked',checkbox.checked)
+
+            if(checkbox.checked)
+            {
+                const patient = {
+                    name: this.name,
+                    lastName: this.lastName,
+                    email: this.email,
+                    password: this.password
+                }
+                await this.patientServices.registerPatient(patient)
+            }
+            else
+            {
+                const doctor = {
                 name: this.name,
                 lastName: this.lastName,
                 email: this.email,
                 password: this.password
             }
             await this.doctorServices.registerDoctor(doctor)
+            }
+
+            
             this.name = ''
             this.lastName = ''
             this.email = ''
@@ -61,6 +89,7 @@ export default {
     },
     created() {
         this.doctorServices = new DoctorServices
+        this.patientServices = new PatientServices
     }
 }
 </script>
@@ -105,6 +134,11 @@ h5 {
     width: 60%;
     align-content: center;
     margin:auto;
+}
+
+.checkbox_input{
+    margin-right: 50%;
+    height: 25px;
 }
 
 </style>
