@@ -1,4 +1,5 @@
 import axios from 'axios'
+import PatientServices from '@/services/PatientService'
 
 const service = axios.create({
     baseURL: 'http://localhost:3000'
@@ -21,12 +22,30 @@ export class DoctorServices {
             // const doctor = data.find(d => d.email == email && d.password == password)
 
         let doctor
+        let founded = false
         data.map(d => {
-            if (d.email == email && d.password == password)
+            if (d.email == email && d.password == password) {
                 doctor = d
+                founded = true
+            }
+
         })
-        console.log('doc', doctor);
-        return doctor
+        if (founded)
+            return [doctor, 1]
+
+        founded = false
+        const patientServices = new PatientServices
+        let patient
+        const data_patient = await patientServices.getAll()
+        data_patient.map(p => {
+            if (p.email == email && p.password == password) {
+                patient = p
+                founded = true
+            }
+        })
+
+        if (founded)
+            return [patient, 2]
 
         // return doctor ? doctor.id : undefined
     }
