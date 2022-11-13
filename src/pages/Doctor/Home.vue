@@ -1,7 +1,7 @@
 <template>
     
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
     <div id="contenedor" class="grid text-center d-flex flex-row " style="--bs-columns: 18; --bs-gap: .5rem;">
          <div class="g-col-4 text-white menu border bg-lightt ">
              <div class="btn-group-vertical h-100 ml-0  " role="group" aria-label="Vertical button group">

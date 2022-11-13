@@ -9,6 +9,8 @@ import Loggin from '@/pages/loggin/Loggin.vue';
             <InputText v-model="username" class="input"/>
             <h5>Constrasena</h5>
             <InputText v-model="password" class="input"/>
+            <h5>¿Eres un Paciente?</h5>
+            <input class="checkbox_input" type="checkbox" id="checkbox" v-model="checked" />
             <Button label="Iniciar Sesion" v-on:click="loggin" class="button">
                 Iniciar Sesion
             </Button>
@@ -33,7 +35,8 @@ export default {
             username: '',
             password: '',
             doctorid: 1,
-            patientid: 1
+            patientid: 1,
+            checked: false
         }
     },
     watch: {
@@ -42,24 +45,25 @@ export default {
     methods: {
         async loggin() {
             
-            const recibo =  await this.doctorServices.validateDoctor(this.username, this.password)
-            if(recibo[1] == 1)
+            const checkbox = document.getElementById('checkbox')
+            console.log('checkbox', checkbox.checked)
+            if(checkbox.checked == true)
             {
-                this.doctorid = recibo[1]
-                router.push(`/doctors/${this.doctorid.id}`)
+                const patient = await this.patientServices.validatePatient(this.username, this.password)
+                if(patient.id !== undefined)
+                    router.push(`/doctors/${patient.id}`)
+                else
+                    alert('Ingresa nuevamente su usuario y contrasenna')
             }
             else
             {
-                router.push(`/doctors/${this.doctorid.id}`)
+                const doctor =  await this.doctorServices.validateDoctor(this.username, this.password)
+                if(doctor.id !== undefined)
+                    router.push(`/doctors/${doctor.id}`)
+                else
+                    alert('Ingresa nuevamente su usuario y contrasenna')
+                
             }
-            //this.doctorid
-             // if(this.doctorid != null) {
-            //     console.log('pasa igual >v')
-            //     // router.push(`/doctors/${this.doctorid.id}`)
-            //     //return true
-            // }
-            console.log(recibo[0],recibo[1])
-
             this.username = ''
             this.password = ''
         }

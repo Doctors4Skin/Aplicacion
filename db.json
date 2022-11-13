@@ -1,48 +1,46 @@
 {
-  "doctors": [
-    {
-      "id": 1,
-      "name": "Nombre1",
-      "lastName": "Apellido1",
-      "email": "email1@gmail.com",
-      "password": "contra1"
-    },
-    {
-      "name": "Nombre2",
-      "lastName": "Apellido2",
-      "email": "correo2@gmail.com",
-      "password": "contra2",
-      "id": 2
-    },
-    {
-      "name": "Nombre3",
-      "lastName": "Apellido3",
-      "email": "correo3@gmail.com",
-      "password": "contra3",
-      "id": 3
-    },
-    {
-      "name": "1321321",
-      "lastName": "213213",
-      "email": "1231",
-      "password": "123213",
-      "id": 4
-    }
-  ],
-  "patients": [
-    {
-      "id": 1,
-      "name": "Willy",
-      "lastName": "Valentin",
-      "email": "patient1@gmail.com",
-      "password": "patient1"
-    },
-    {
-      "name": "Angie",
-      "lastName": "Valverde",
-      "email": "angie@gmail.com",
-      "password": "12356",
-      "id": 2
-    }
-  ]
+    "doctors": [{
+            "id": 1,
+            "name": "Nombre1",
+            "lastName": "Apellido1",
+            "email": "email1@gmail.com",
+            "password": "contra1"
+        },
+        {
+            "name": "Nombre2",
+            "lastName": "Apellido2",
+            "email": "correo2@gmail.com",
+            "password": "contra2",
+            "id": 2
+        },
+        {
+            "name": "Nombre3",
+            "lastName": "Apellido3",
+            "email": "correo3@gmail.com",
+            "password": "contra3",
+            "id": 3
+        },
+        {
+            "name": "1321321",
+            "lastName": "213213",
+            "email": "1231",
+            "password": "1231",
+            "id": 4
+        }
+    ],
+    "patients": [{
+            "id": 5,
+            "name": "Willy",
+            "lastName": "Valentin",
+            "email": "patient1",
+            "password": "patient1"
+        },
+        {
+            "name": "Angie",
+            "lastName": "Valverde",
+            "email": "angie@gmail.com",
+            "password": "12356",
+            "id": 2
+        }
+    ]
 }

@@ -12,7 +12,7 @@
             <InputText v-model="email" class="input"/>
             <h5>Contrasena</h5>
             <InputText v-model="password" class="input"/>
-            <h5>¿Eres un Paciente?</h5>
+            <h5>Ingresar como paciente</h5>
             <input class="checkbox_input" type="checkbox" id="checkbox" v-model="checked" />
             <Button label="Registrarse" class="button" v-on:click="register"/>
             
@@ -72,12 +72,12 @@ export default {
             else
             {
                 const doctor = {
-                name: this.name,
-                lastName: this.lastName,
-                email: this.email,
-                password: this.password
-            }
-            await this.doctorServices.registerDoctor(doctor)
+                    name: this.name,
+                    lastName: this.lastName,
+                    email: this.email,
+                    password: this.password
+                }
+                await this.doctorServices.registerDoctor(doctor)
             }
 
             

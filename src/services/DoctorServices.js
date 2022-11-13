@@ -19,7 +19,7 @@ export class DoctorServices {
         const data = await this.getAll()
             // const doctor = data.find(d => d.email == email && d.password == password)
 
-        let doctor
+        let doctor = {}
         let founded = false
         data.map(d => {
             if (d.email == email && d.password == password) {
@@ -28,22 +28,23 @@ export class DoctorServices {
             }
 
         })
-        if (founded)
-            return [doctor, 1]
+        return doctor;
+        // if (founded)
+        //     return [doctor, 1]
 
-        founded = false
-        const patientServices = new PatientServices
-        let patient
-        const data_patient = await patientServices.getAll()
-        data_patient.map(p => {
-            if (p.email == email && p.password == password) {
-                patient = p
-                founded = true
-            }
-        })
+        // founded = false
+        // const patientServices = new PatientServices
+        // let patient
+        // const data_patient = await patientServices.getAll()
+        // data_patient.map(p => {
+        //     if (p.email == email && p.password == password) {
+        //         patient = p
+        //         founded = true
+        //     }
+        // })
 
-        if (founded)
-            return [patient, 2]
+        // if (founded)
+        //     return [patient, 2]
 
         // return doctor ? doctor.id : undefined
     }
