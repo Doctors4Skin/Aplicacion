@@ -15,6 +15,8 @@ export class DoctorServices {
             //const doctor = data.find(d => d.id == id)
         return data
     }
+
+   
     async validateDoctor(email, password) {
         const data = await this.getAll()
             // const doctor = data.find(d => d.email == email && d.password == password)
